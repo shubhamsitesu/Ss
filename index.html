@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Primary SEO Meta Tags -->
-    <title>SSRMovies - Latest Bollywood & Hollywood Movie Reviews | Honest Indian Film Analysis</title>
+    <title>SSRMovies - Latest Bollywood & Hollywood Movie Reviews | Honest Indian Film Analysis On SSRMovies.in</title>
     <meta name="title" content="SSRMovies - Latest Bollywood & Hollywood Movie Reviews | Honest Indian Film Analysis">
-    <meta name="description" content="SSRMovies provides honest, in-depth movie reviews for Bollywood, Hollywood, Tollywood, and South Indian films. Read expert analysis, ratings, and recommendations. Trusted by millions of Indian cinema lovers.">
-    <meta name="keywords" content="ssrmovies, ssrmovies review, ssrmovies bollywood, ssrmovies hollywood, movie reviews india, bollywood movie review, hindi movie review, latest movie reviews india, tollywood reviews, south indian movie review">
+    <meta name="description" content="SSRMovies (ssrmovies.in) is India's top platform for honest movie reviews. Read expert analysis of Bollywood, Hollywood, Tollywood, and South Indian films. Trusted by millions.">
+    <meta name="keywords" content="ssrmovies, ssrmovies.in, ssrmovies review, bollywood movie review, hollywood reviews india, latest movie reviews, tollywood analysis">
     <meta name="author" content="SSRMovies Editorial Team">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://ssrmovies.in/">
@@ -18,13 +18,12 @@
     <meta name="geo.region" content="IN">
     <meta name="geo.placename" content="India">
     <meta name="language" content="English, Hindi">
-    <meta name="distribution" content="India">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ssrmovies.in/">
     <meta property="og:title" content="SSRMovies - Latest Bollywood & Hollywood Movie Reviews">
-    <meta property="og:description" content="Honest movie reviews for Bollywood, Hollywood, Tollywood films. Expert ratings and analysis trusted by Indian cinema lovers.">
+    <meta property="og:description" content="SSRMovies provides honest movie reviews for Bollywood, Hollywood, and Tollywood. Visit ssrmovies.in for trusted ratings.">
     <meta property="og:image" content="https://ssrmovies.in/og-image.jpg">
     <meta property="og:locale" content="en_IN">
     <meta property="og:site_name" content="SSRMovies">
@@ -33,7 +32,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://ssrmovies.in/">
     <meta name="twitter:title" content="SSRMovies - Latest Bollywood & Hollywood Movie Reviews">
-    <meta name="twitter:description" content="Honest movie reviews for Bollywood, Hollywood, Tollywood films. Expert ratings trusted by Indian cinema lovers.">
+    <meta name="twitter:description" content="Honest movie reviews for Bollywood, Hollywood, Tollywood films. Visit ssrmovies.in for trusted analysis.">
     <meta name="twitter:image" content="https://ssrmovies.in/twitter-card.jpg">
     
     <!-- Favicon -->
@@ -42,30 +41,20 @@
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Schema.org Structured Data -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght+400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "SSRMovies",
-        "alternateName": "SSR Movies",
-        "url": "https://ssrmovies.in/",
-        "description": "SSRMovies provides honest movie reviews for Bollywood, Hollywood, Tollywood, and South Indian films.",
-        "publisher": {
-            "@type": "Organization",
-            "name": "SSRMovies",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://ssrmovies.in/logo.png"
-            }
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://ssrmovies.in/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SSRMovies",
+      "url": "https://ssrmovies.in/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ssrmovies.in/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
     
@@ -81,12 +70,13 @@
             --accent-light: #e8c85a;
             --accent-dark: #b8942d;
             --border: #2a2a3a;
-            --glass: rgba(26, 26, 38, 0.8);
+            --glass: rgba(18, 18, 26, 0.98);
             --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             --shadow-glow: 0 0 40px rgba(212, 175, 55, 0.15);
             --radius: 16px;
             --radius-sm: 8px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --header-height: 80px;
         }
 
         * {
@@ -97,6 +87,18 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            /* Stops anchor links from hiding behind header */
+            scroll-padding-top: 120px; 
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--fg-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -108,15 +110,7 @@
             }
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--fg-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Film Grain Background - Z-index fixed */
+        /* Background & Grain */
         .grain-overlay {
             position: fixed;
             top: 0;
@@ -124,20 +118,20 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1; /* Lowered to be behind content */
+            z-index: 1;
             opacity: 0.03;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; /* Base layer */
+            z-index: 0;
             overflow: hidden;
+            pointer-events: none;
         }
 
         .bg-gradient {
@@ -155,6 +149,7 @@
             border-radius: 50%;
             filter: blur(80px);
             animation: float 20s ease-in-out infinite;
+            will-change: transform;
         }
 
         .orb-1 {
@@ -163,7 +158,6 @@
             background: rgba(212, 175, 55, 0.1);
             top: -100px;
             right: -100px;
-            animation-delay: 0s;
         }
 
         .orb-2 {
@@ -172,36 +166,34 @@
             background: rgba(212, 175, 55, 0.06);
             bottom: -50px;
             left: -50px;
-            animation-delay: -10s;
         }
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.05); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
+            50% { transform: translate(20px, -20px) scale(1.05); }
         }
 
-        /* Typography */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 700;
             line-height: 1.2;
         }
 
-        /* Header - Z-index fixed */
+        /* Header */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100; /* High z-index to be above menu and content */
+            height: var(--header-height);
+            z-index: 1000;
             padding: 1rem 0;
-            transition: var(--transition);
-        }
-
-        header.scrolled, header.menu-open {
+            display: flex;
+            align-items: center;
+            /* Permanent Glass Background */
             background: var(--glass);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
 
@@ -209,6 +201,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -220,6 +213,8 @@
             gap: 0.75rem;
             text-decoration: none;
             color: var(--fg-primary);
+            position: relative;
+            z-index: 1010;
         }
 
         .logo-icon {
@@ -244,9 +239,7 @@
             letter-spacing: -0.02em;
         }
 
-        .logo-text span {
-            color: var(--accent);
-        }
+        .logo-text span { color: var(--accent); }
 
         nav {
             display: flex;
@@ -274,14 +267,8 @@
             transition: var(--transition);
         }
 
-        nav a:hover, nav a:focus {
-            color: var(--accent);
-            outline: none;
-        }
-
-        nav a:hover::after, nav a:focus::after {
-            width: 100%;
-        }
+        nav a:hover, nav a:focus { color: var(--accent); outline: none; }
+        nav a:hover::after, nav a:focus::after { width: 100%; }
 
         .search-btn {
             width: 44px;
@@ -311,7 +298,7 @@
             background: none;
             border: none;
             cursor: pointer;
-            z-index: 110; /* Ensure button is above everything */
+            z-index: 1010;
         }
 
         .mobile-menu-btn span {
@@ -326,9 +313,9 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 8rem 2rem 4rem;
+            padding: 10rem 2rem 4rem; /* Extra top padding */
             position: relative;
-            z-index: 2; /* Content layer */
+            z-index: 2;
         }
 
         .hero-content {
@@ -341,20 +328,11 @@
             align-items: center;
         }
 
-        .hero-text {
-            animation: fadeInUp 1s ease-out forwards;
-            opacity: 0;
-        }
+        .hero-text { animation: fadeInUp 1s ease-out forwards; opacity: 0; }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-badge {
@@ -370,21 +348,13 @@
             margin-bottom: 1.5rem;
         }
 
-        .hero-badge svg {
-            width: 16px;
-            height: 16px;
-        }
-
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
         }
 
-        .hero h1 .highlight {
-            color: var(--accent);
-            position: relative;
-        }
+        .hero h1 .highlight { color: var(--accent); }
 
         .hero-description {
             font-size: 1.15rem;
@@ -444,10 +414,7 @@
             border-top: 1px solid var(--border);
         }
 
-        .stat {
-            text-align: left;
-        }
-
+        .stat { text-align: left; }
         .stat-value {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
@@ -455,12 +422,7 @@
             color: var(--accent);
             line-height: 1;
         }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--fg-muted);
-            margin-top: 0.25rem;
-        }
+        .stat-label { font-size: 0.9rem; color: var(--fg-muted); margin-top: 0.25rem; }
 
         .hero-visual {
             position: relative;
@@ -513,10 +475,7 @@
             margin-bottom: 0.75rem;
         }
 
-        .featured-title {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-        }
+        .featured-title { font-size: 1.75rem; margin-bottom: 0.5rem; }
 
         .featured-meta {
             display: flex;
@@ -526,30 +485,12 @@
             font-size: 0.9rem;
         }
 
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            color: var(--accent);
-        }
+        .rating { display: flex; align-items: center; gap: 0.35rem; color: var(--accent); }
+        .rating svg { width: 18px; height: 18px; fill: currentColor; }
 
-        .rating svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        .featured-info {
-            padding: 1.5rem 2rem 2rem;
-        }
-
-        .review-excerpt {
-            color: var(--fg-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
+        .featured-info { padding: 1.5rem 2rem 2rem; }
+        .review-excerpt { color: var(--fg-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; }
+        
         .read-more {
             display: inline-flex;
             align-items: center;
@@ -559,10 +500,7 @@
             font-weight: 600;
             transition: var(--transition);
         }
-
-        .read-more:hover {
-            gap: 0.75rem;
-        }
+        .read-more:hover { gap: 0.75rem; }
 
         /* Categories Section */
         .categories {
@@ -582,26 +520,10 @@
             background: linear-gradient(90deg, transparent, var(--border), transparent);
         }
 
-        .section-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--fg-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .section-container { max-width: 1400px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: clamp(1rem, 1vw, 1rem); margin-bottom: 1rem; }
+        .section-header p { color: var(--fg-secondary); max-width: 600px; margin: 0 auto; }
 
         .categories-grid {
             display: grid;
@@ -637,10 +559,7 @@
             border-color: var(--accent);
             box-shadow: var(--shadow-glow);
         }
-
-        .category-card:hover::before {
-            transform: scaleX(1);
-        }
+        .category-card:hover::before { transform: scaleX(1); }
 
         .category-icon {
             width: 56px;
@@ -653,24 +572,10 @@
             margin-bottom: 1.25rem;
             color: var(--accent);
         }
+        .category-icon svg { width: 28px; height: 28px; }
 
-        .category-icon svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        .category-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-        }
-
-        .category-card p {
-            color: var(--fg-muted);
-            font-size: 0.9rem;
-        }
-
+        .category-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .category-card p { color: var(--fg-muted); font-size: 0.9rem; }
         .category-count {
             position: absolute;
             top: 1.5rem;
@@ -695,10 +600,7 @@
             align-items: flex-end;
             margin-bottom: 3rem;
         }
-
-        .reviews-header h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-        }
+        .reviews-header h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
 
         .view-all {
             color: var(--accent);
@@ -709,10 +611,7 @@
             gap: 0.5rem;
             transition: var(--transition);
         }
-
-        .view-all:hover {
-            gap: 0.75rem;
-        }
+        .view-all:hover { gap: 0.75rem; }
 
         .reviews-grid {
             display: grid;
@@ -741,12 +640,6 @@
             overflow: hidden;
         }
 
-        .review-poster img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         .review-rating-badge {
             position: absolute;
             top: 1rem;
@@ -761,24 +654,11 @@
             font-weight: 700;
             color: var(--accent);
         }
+        .review-rating-badge svg { width: 16px; height: 16px; fill: currentColor; }
 
-        .review-rating-badge svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
+        .review-content { padding: 1.5rem; }
 
-        .review-content {
-            padding: 1.5rem;
-        }
-
-        .movie-genres {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.75rem;
-        }
-
+        .movie-genres { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
         .genre-tag {
             font-size: 0.75rem;
             padding: 0.25rem 0.6rem;
@@ -788,31 +668,11 @@
             font-weight: 500;
         }
 
-        .review-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-        }
+        .review-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .review-card h3 a { color: var(--fg-primary); text-decoration: none; transition: var(--transition); }
+        .review-card h3 a:hover { color: var(--accent); }
 
-        .review-card h3 a {
-            color: var(--fg-primary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .review-card h3 a:hover {
-            color: var(--accent);
-        }
-
-        .movie-meta {
-            display: flex;
-            gap: 1rem;
-            color: var(--fg-muted);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
+        .movie-meta { display: flex; gap: 1rem; color: var(--fg-muted); font-size: 0.85rem; margin-bottom: 1rem; }
         .review-preview {
             color: var(--fg-secondary);
             font-size: 0.9rem;
@@ -840,34 +700,12 @@
             align-items: center;
         }
 
-        .about-text h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1.5rem;
-        }
+        .about-text h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+        .about-text h2 span { color: var(--accent); }
+        .about-text p { color: var(--fg-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
 
-        .about-text h2 span {
-            color: var(--accent);
-        }
-
-        .about-text p {
-            color: var(--fg-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature {
-            display: flex;
-            gap: 1rem;
-        }
-
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+        .feature { display: flex; gap: 1rem; }
         .feature-icon {
             width: 48px;
             height: 48px;
@@ -879,23 +717,10 @@
             color: var(--accent);
             flex-shrink: 0;
         }
+        .feature h4 { font-size: 1rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.25rem; }
+        .feature p { font-size: 0.85rem !important; margin-bottom: 0 !important; }
 
-        .feature h4 {
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .feature p {
-            font-size: 0.85rem !important;
-            margin-bottom: 0 !important;
-        }
-
-        .about-visual {
-            position: relative;
-        }
-
+        .about-visual { position: relative; }
         .about-image {
             width: 100%;
             aspect-ratio: 4/3;
@@ -908,7 +733,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .about-image::before {
             content: '';
             position: absolute;
@@ -929,28 +753,11 @@
             border: 1px solid var(--border);
             max-width: 280px;
         }
-
-        .about-quote p {
-            font-style: italic;
-            color: var(--fg-primary);
-            font-size: 1rem !important;
-            margin-bottom: 1rem !important;
-        }
-
-        .about-quote cite {
-            color: var(--accent);
-            font-style: normal;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+        .about-quote p { font-style: italic; color: var(--fg-primary); font-size: 1rem !important; margin-bottom: 1rem !important; }
+        .about-quote cite { color: var(--accent); font-style: normal; font-weight: 600; font-size: 0.9rem; }
 
         /* Newsletter Section */
-        .newsletter {
-            padding: 6rem 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
+        .newsletter { padding: 6rem 2rem; position: relative; z-index: 2; }
         .newsletter-container {
             max-width: 800px;
             margin: 0 auto;
@@ -962,7 +769,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .newsletter-container::before {
             content: '';
             position: absolute;
@@ -973,24 +779,9 @@
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
         }
-
-        .newsletter h2 {
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            margin-bottom: 1rem;
-        }
-
-        .newsletter p {
-            color: var(--fg-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
+        .newsletter h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: 1rem; }
+        .newsletter p { color: var(--fg-secondary); margin-bottom: 2rem; }
+        .newsletter-form { display: flex; gap: 1rem; max-width: 500px; margin: 0 auto; }
         .newsletter-form input {
             flex: 1;
             padding: 1rem 1.5rem;
@@ -1001,15 +792,8 @@
             font-size: 1rem;
             transition: var(--transition);
         }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .newsletter-form input::placeholder {
-            color: var(--fg-muted);
-        }
+        .newsletter-form input:focus { outline: none; border-color: var(--accent); }
+        .newsletter-form input::placeholder { color: var(--fg-muted); }
 
         /* Footer */
         footer {
@@ -1019,26 +803,9 @@
             position: relative;
             z-index: 2;
         }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .footer-brand p {
-            color: var(--fg-secondary);
-            margin: 1rem 0 1.5rem;
-            max-width: 300px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 0.75rem;
-        }
-
+        .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+        .footer-brand p { color: var(--fg-secondary); margin: 1rem 0 1.5rem; max-width: 300px; }
+        .social-links { display: flex; gap: 0.75rem; }
         .social-link {
             width: 44px;
             height: 44px;
@@ -1052,40 +819,12 @@
             text-decoration: none;
             transition: var(--transition);
         }
-
-        .social-link:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-            border-color: var(--accent);
-        }
-
-        .footer-column h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--fg-primary);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-column a {
-            color: var(--fg-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 0.95rem;
-        }
-
-        .footer-column a:hover {
-            color: var(--accent);
-        }
-
+        .social-link:hover { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
+        .footer-column h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--fg-primary); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 0.75rem; }
+        .footer-column a { color: var(--fg-secondary); text-decoration: none; transition: var(--transition); font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--accent); }
         .footer-bottom {
             max-width: 1400px;
             margin: 3rem auto 0;
@@ -1097,21 +836,9 @@
             color: var(--fg-muted);
             font-size: 0.9rem;
         }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--fg-muted);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: var(--fg-muted); text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { color: var(--accent); }
 
         /* Search Modal */
         .search-modal {
@@ -1128,28 +855,10 @@
             visibility: hidden;
             transition: var(--transition);
         }
-
-        .search-modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .search-container {
-            width: 100%;
-            max-width: 700px;
-            transform: translateY(-20px);
-            transition: var(--transition);
-        }
-
-        .search-modal.active .search-container {
-            transform: translateY(0);
-        }
-
-        .search-input-wrapper {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
+        .search-modal.active { opacity: 1; visibility: visible; }
+        .search-container { width: 100%; max-width: 700px; transform: translateY(-20px); transition: var(--transition); }
+        .search-modal.active .search-container { transform: translateY(0); }
+        .search-input-wrapper { position: relative; margin-bottom: 2rem; }
         .search-input-wrapper svg {
             position: absolute;
             left: 1.5rem;
@@ -1159,7 +868,6 @@
             height: 24px;
             color: var(--fg-muted);
         }
-
         .search-input {
             width: 100%;
             padding: 1.25rem 1.5rem 1.25rem 4rem;
@@ -1170,55 +878,14 @@
             font-size: 1.25rem;
             transition: var(--transition);
         }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .search-results {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            overflow: hidden;
-        }
-
-        .search-result-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem 1.5rem;
-            border-bottom: 1px solid var(--border);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .search-result-item:last-child {
-            border-bottom: none;
-        }
-
-        .search-result-item:hover {
-            background: var(--bg-secondary);
-        }
-
-        .result-poster {
-            width: 60px;
-            height: 80px;
-            background: var(--bg-secondary);
-            border-radius: var(--radius-sm);
-            flex-shrink: 0;
-        }
-
-        .result-info h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .result-info p {
-            color: var(--fg-muted);
-            font-size: 0.85rem;
-        }
+        .search-input:focus { outline: none; border-color: var(--accent); }
+        .search-results { background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+        .search-result-item { display: flex; gap: 1rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: var(--transition); }
+        .search-result-item:last-child { border-bottom: none; }
+        .search-result-item:hover { background: var(--bg-secondary); }
+        .result-poster { width: 60px; height: 80px; background: var(--bg-secondary); border-radius: var(--radius-sm); flex-shrink: 0; }
+        .result-info h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .result-info p { color: var(--fg-muted); font-size: 0.85rem; }
 
         .close-search {
             position: absolute;
@@ -1235,37 +902,119 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            z-index: 2001;
         }
+        .close-search:hover { background: var(--accent); color: var(--bg-primary); }
 
-        .close-search:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
-
-        /* Mobile Menu - Z-index fixed */
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             inset: 0;
             background: var(--bg-primary);
-            z-index: 99; /* Below header so header controls are clickable */
-            padding: 7rem 2rem 2rem; /* Top padding to clear header */
+            z-index: 900;
+            padding: 7rem 2rem 2rem;
             transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .mobile-menu.active { transform: translateX(0); }
+        .mobile-menu nav { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+        .mobile-menu nav a { font-size: 1.5rem; }
+
+        /* Domain Sale Popup */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
+        }
+        .popup-overlay.active { opacity: 1; visibility: visible; }
+        
+        .popup-content {
+            background: linear-gradient(145deg, #1a1a26 0%, #12121a 100%);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
+            transform: scale(0.9);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .popup-overlay.active .popup-content { transform: scale(1); }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--fg-secondary);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            line-height: 1;
             transition: var(--transition);
         }
+        .popup-close:hover { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
 
-        .mobile-menu.active {
-            transform: translateX(0);
+        .popup-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--accent);
         }
-
-        .mobile-menu nav {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1.5rem;
+        .popup-icon svg { width: 32px; height: 32px; }
+        
+        .popup-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
         }
-
-        .mobile-menu nav a {
-            font-size: 1.5rem;
+        .popup-text {
+            color: var(--fg-secondary);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
         }
+        .popup-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+        }
+        .popup-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        .popup-secondary {
+            display: block;
+            color: var(--fg-muted);
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+        .popup-secondary:hover { color: var(--fg-primary); }
 
         /* Animations */
         .reveal {
@@ -1273,125 +1022,47 @@
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text {
-                order: 1;
-            }
-
-            .hero-visual {
-                order: 0;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .hero-description {
-                margin: 0 auto 2rem;
-            }
-
-            .hero-actions {
-                justify-content: center;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-visual {
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .about-quote {
-                position: relative;
-                bottom: auto;
-                right: auto;
-                margin-top: 2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            /* Fix: Text First on Mobile */
+            .hero-text { order: 1; margin-bottom: 2rem; } 
+            .hero-visual { order: 2; max-width: 500px; margin: 0 auto; }
+            
+            .hero-description { margin: 0 auto 2rem; }
+            .hero-actions { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .about-content { grid-template-columns: 1fr; text-align: center; }
+            .about-visual { max-width: 500px; margin: 0 auto; }
+            .about-quote { position: relative; bottom: auto; right: auto; margin-top: 2rem; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .header-inner nav {
-                display: none;
-            }
+            /* Mobile Header Overlap Fix */
+            .hero { padding-top: 8rem; } /* Added extra space */
+            header { background: rgba(18, 18, 26, 1); } /* Solid background on mobile */
 
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .hero {
-                padding: 6rem 1rem 3rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-                align-items: center;
-            }
-
-            .stat {
-                text-align: center;
-            }
-
-            .reviews-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-brand p {
-                margin: 1rem auto 1.5rem;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+            .header-inner nav { display: none; }
+            .mobile-menu-btn { display: flex; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; }
+            .stat { text-align: center; }
+            .reviews-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .about-features { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-brand p { margin: 1rem auto 1.5rem; }
+            .social-links { justify-content: center; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Popup Mobile Adjustments */
+            .popup-content { padding: 2rem 1.5rem; }
+            .popup-title { font-size: 1.5rem; }
         }
-
+        
         /* Focus States */
         a:focus-visible, button:focus-visible, input:focus-visible {
             outline: 2px solid var(--accent);
@@ -1400,10 +1071,7 @@
     </style>
 </head>
 <body>
-    <!-- Film Grain Overlay -->
     <div class="grain-overlay" aria-hidden="true"></div>
-
-    <!-- Animated Background -->
     <div class="bg-animation" aria-hidden="true">
         <div class="bg-gradient"></div>
         <div class="floating-orb orb-1"></div>
@@ -1437,7 +1105,6 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -1449,9 +1116,10 @@
                         </svg>
                         Trusted by 2M+ Indian Cinema Lovers
                     </div>
-                    <h1>Honest <span class="highlight">Movie Reviews</span> For Every Indian Film Enthusiast</h1>
+                    <!-- SEO H1 -->
+                    <h1>Welcome to <span class="highlight">SSRMovies</span> - Your Trusted Review Destination</h1>
                     <p class="hero-description">
-                        SSRMovies delivers comprehensive, unbiased reviews of Bollywood, Hollywood, Tollywood, and South Indian films. Get expert analysis, detailed ratings, and discover your next favorite movie.
+                        SSRMovies (ssrmovies.in) is India's leading platform for unbiased movie reviews. Explore Bollywood, Hollywood, and South Indian cinema analysis at SSRMovies. We help you decide what to watch next.
                     </p>
                     <div class="hero-actions">
                         <a href="#reviews" class="btn btn-primary">
@@ -1496,7 +1164,7 @@
                         </div>
                         <div class="featured-info">
                             <p class="review-excerpt">
-                                Stree 2 delivers an entertaining blend of horror and comedy with brilliant performances. Rajkummar Rao and Shraddha Kapoor shine in this worthy sequel that surpasses the original...
+                                Stree 2 delivers an entertaining blend of horror and comedy with brilliant performances. Read the full analysis only on SSRMovies.
                             </p>
                             <a href="#" class="read-more">
                                 Read Full Review
@@ -1515,8 +1183,8 @@
         <section class="categories" id="categories">
             <div class="section-container">
                 <header class="section-header reveal">
-                    <h2>Explore Movie Categories</h2>
-                    <p>Find reviews across all major film industries in India and beyond</p>
+                    <h2>Explore Movie Categories on SSRMovies</h2>
+                    <p>Find honest reviews across all major film industries in India and beyond at ssrmovies.in</p>
                 </header>
                 <div class="categories-grid">
                     <article class="category-card reveal" tabindex="0" role="button" aria-label="Browse Bollywood Reviews">
@@ -1597,9 +1265,8 @@
         <section class="latest-reviews" id="reviews">
             <div class="section-container">
                 <header class="reviews-header reveal">
-                    <h2>Latest Movie Reviews</h2>
-                    <a href="#" class="view-all">
-                        View All Reviews
+                    <h2>Movie on SSRMovies</h2>
+                    
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"></path>
                             <path d="m12 5 7 7-7 7"></path>
@@ -1616,12 +1283,12 @@
         <section class="about-section" id="about">
             <div class="about-content">
                 <div class="about-text reveal">
-                    <h2>Why <span>SSRMovies</span> Is India's Trusted Movie Review Platform</h2>
+                    <h2>Why <span>SSRMovies</span> Is India's #1 Review Platform</h2>
                     <p>
-                        SSRMovies has been providing honest, unbiased movie reviews to Indian cinema lovers since 2019. Our team of experienced critics watches every film thoroughly before sharing their analysis, ensuring you get genuine insights before investing your time and money.
+                        SSRMovies has been providing honest, unbiased movie reviews to Indian cinema lovers since 2019. Our team of experienced critics watches every film thoroughly before sharing their analysis on ssrmovies.in, ensuring you get genuine insights.
                     </p>
                     <p>
-                        We understand that every viewer has different preferences. That's why our reviews cover all aspects - from acting and direction to music and cinematography - helping you make informed decisions about what to watch next.
+                        We understand that every viewer has different preferences. That's why our reviews cover all aspects - from acting and direction to music and cinematography - helping you make informed decisions.
                     </p>
                     <div class="about-features">
                         <div class="feature">
@@ -1632,7 +1299,7 @@
                             </div>
                             <div>
                                 <h4>Unbiased Reviews</h4>
-                                <p>100% honest opinions without any external influence</p>
+                                <p>100% honest opinions without any influence</p>
                             </div>
                         </div>
                         <div class="feature">
@@ -1693,8 +1360,8 @@
         <!-- Newsletter Section -->
         <section class="newsletter" id="contact">
             <div class="newsletter-container reveal">
-                <h2>Stay Updated with Latest Reviews</h2>
-                <p>Subscribe to SSRMovies newsletter and never miss a review. Get weekly movie recommendations straight to your inbox.</p>
+                <h2>Stay Updated with SSRMovies</h2>
+                <p>Subscribe to our newsletter and never miss a review. Get weekly movie recommendations straight to your inbox.</p>
                 <form class="newsletter-form" id="newsletterForm" aria-label="Newsletter Subscription">
                     <input type="email" placeholder="Enter your email address" required aria-label="Email Address">
                     <button type="submit" class="btn btn-primary">Subscribe</button>
@@ -1711,7 +1378,7 @@
                     <div class="logo-icon">S</div>
                     <span class="logo-text">SSR<span>Movies</span></span>
                 </a>
-                <p>SSRMovies is India's trusted platform for honest movie reviews. We help millions of cinema lovers make informed decisions about what to watch.</p>
+                <p>SSRMovies is India's trusted platform for honest movie reviews. Visit ssrmovies.in for the latest analysis.</p>
                 <div class="social-links">
                     <a href="#" class="social-link" aria-label="Facebook">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -1769,7 +1436,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 SSRMovies.in - All Rights Reserved</p>
+            <p>&copy; 2026 SSRMovies.in - All Rights Reserved</p>
             <div class="footer-links">
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
@@ -1794,9 +1461,7 @@
                 </svg>
                 <input type="search" class="search-input" placeholder="Search movies, actors, directors..." aria-label="Search">
             </div>
-            <div class="search-results" id="searchResults">
-                <!-- Search results populated by JS -->
-            </div>
+            <div class="search-results" id="searchResults"></div>
         </div>
     </div>
 
@@ -1810,98 +1475,54 @@
         </nav>
     </div>
 
+    <!-- Domain Sale Popup -->
+    <div class="popup-overlay" id="domainPopup">
+        <div class="popup-content">
+            <button class="popup-close" id="popupClose">&times;</button>
+            <div class="popup-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <path d="M12 17h.01"></path>
+                </svg>
+            </div>
+            <h3 class="popup-title">Premium Domain For Sale</h3>
+            <p class="popup-text">
+                Own this high-authority domain. <strong>SSRMovies.in</strong> is perfect for movie portals, streaming platforms, or review blogs.
+            </p>
+            <a href="mailto:sale@ssrmovies.in?subject=Inquiry for SSRMovies.in Domain" class="popup-btn">
+                Contact Owner: sale@ssrmovies.in
+            </a>
+            <a href="#" class="popup-secondary" id="popupCloseLink">No thanks, continue to site</a>
+        </div>
+    </div>
+
     <script>
-        // Movie Data
         const moviesData = [
-            {
-                title: "Stree 2",
-                year: "2024",
-                genres: ["Horror", "Comedy"],
-                rating: 4.5,
-                director: "Amar Kaushik",
-                excerpt: "Stree 2 delivers an entertaining blend of horror and comedy with brilliant performances. A worthy sequel that surpasses the original.",
-                category: "Bollywood"
-            },
-            {
-                title: "Deadpool & Wolverine",
-                year: "2024",
-                genres: ["Action", "Comedy"],
-                rating: 4.3,
-                director: "Shawn Levy",
-                excerpt: "Ryan Reynolds and Hugh Jackman bring their A-game in this R-rated Marvel adventure that breaks the multiverse.",
-                category: "Hollywood"
-            },
-            {
-                title: "Kalki 2898 AD",
-                year: "2024",
-                genres: ["Sci-Fi", "Action"],
-                rating: 4.2,
-                director: "Nag Ashwin",
-                excerpt: "A visual spectacle that blends mythology with futuristic sci-fi. Prabhas delivers in this ambitious Indian epic.",
-                category: "Tollywood"
-            },
-            {
-                title: "Avesham",
-                year: "2024",
-                genres: ["Action", "Drama"],
-                rating: 4.4,
-                director: "Jithu Madhavan",
-                excerpt: "Fahadh Faasil delivers a powerhouse performance in this gripping Malayalam thriller that keeps you on the edge.",
-                category: "South Indian"
-            },
-            {
-                title: "Bhool Bhulaiyaa 3",
-                year: "2024",
-                genres: ["Horror", "Comedy"],
-                rating: 3.8,
-                director: "Anees Bazmee",
-                excerpt: "Kartik Aaryan returns as Rooh Baba in this entertaining horror-comedy that offers decent scares and laughs.",
-                category: "Bollywood"
-            },
-            {
-                title: "Singham Again",
-                year: "2024",
-                genres: ["Action", "Drama"],
-                rating: 3.9,
-                director: "Rohit Shetty",
-                excerpt: "Ajay Devgn returns in this explosive cop universe entry. High on action, drama, and patriotic fervor.",
-                category: "Bollywood"
-            }
+            { title: "Stree 2", year: "2024", genres: ["Horror", "Comedy"], rating: 4.5, director: "Amar Kaushik", excerpt: "Stree 2 delivers an entertaining blend of horror and comedy with brilliant performances.", category: "Bollywood" },
+            { title: "Deadpool & Wolverine", year: "2024", genres: ["Action", "Comedy"], rating: 4.3, director: "Shawn Levy", excerpt: "Ryan Reynolds and Hugh Jackman bring their A-game in this R-rated Marvel adventure.", category: "Hollywood" },
+            { title: "Kalki 2898 AD", year: "2024", genres: ["Sci-Fi", "Action"], rating: 4.2, director: "Nag Ashwin", excerpt: "A visual spectacle that blends mythology with futuristic sci-fi.", category: "Tollywood" },
+            { title: "Avesham", year: "2024", genres: ["Action", "Drama"], rating: 4.4, director: "Jithu Madhavan", excerpt: "Fahadh Faasil delivers a powerhouse performance in this gripping Malayalam thriller.", category: "South Indian" },
+            { title: "Bhool Bhulaiyaa 3", year: "2024", genres: ["Horror", "Comedy"], rating: 3.8, director: "Anees Bazmee", excerpt: "Kartik Aaryan returns in this entertaining horror-comedy.", category: "Bollywood" },
+            { title: "Singham Again", year: "2024", genres: ["Action", "Drama"], rating: 3.9, director: "Rohit Shetty", excerpt: "Ajay Devgn returns in this explosive cop universe entry.", category: "Bollywood" }
         ];
 
-        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            initHeader();
             initReviews();
             initSearch();
             initMobileMenu();
             initNewsletter();
             initScrollReveal();
+            initPopup(); // Initialize Popup
         });
 
-        // Header Scroll Effect
-        function initHeader() {
-            const header = document.getElementById('mainHeader');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        }
-
-        // Populate Reviews Grid
         function initReviews() {
             const grid = document.getElementById('reviewsGrid');
             if (!grid) return;
-            
             moviesData.forEach((movie, index) => {
                 const card = document.createElement('article');
                 card.className = 'review-card reveal';
                 card.style.transitionDelay = `${index * 0.1}s`;
-                
                 card.innerHTML = `
                     <div class="review-poster">
                         <div class="review-rating-badge">
@@ -1919,14 +1540,11 @@
                             <span>Dir: ${movie.director}</span>
                         </div>
                         <p class="review-preview">${movie.excerpt}</p>
-                    </div>
-                `;
-                
+                    </div>`;
                 grid.appendChild(card);
             });
         }
 
-        // Search Modal
         function initSearch() {
             const searchBtn = document.getElementById('searchBtn');
             const searchModal = document.getElementById('searchModal');
@@ -1936,143 +1554,98 @@
 
             if(!searchBtn || !searchModal) return;
 
-            searchBtn.addEventListener('click', function() {
+            searchBtn.addEventListener('click', () => {
                 searchModal.classList.add('active');
                 setTimeout(() => searchInput.focus(), 100);
             });
 
-            closeSearch.addEventListener('click', function() {
-                searchModal.classList.remove('active');
+            closeSearch.addEventListener('click', () => searchModal.classList.remove('active'));
+            searchModal.addEventListener('click', (e) => { if (e.target === searchModal) searchModal.classList.remove('active'); });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && searchModal.classList.contains('active')) searchModal.classList.remove('active');
             });
 
-            searchModal.addEventListener('click', function(e) {
-                if (e.target === searchModal) {
-                    searchModal.classList.remove('active');
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && searchModal.classList.contains('active')) {
-                    searchModal.classList.remove('active');
-                }
-            });
-
-            searchInput.addEventListener('input', function(e) {
+            searchInput.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase();
-                
-                if (query.length < 2) {
-                    searchResults.innerHTML = '<p style="padding: 1.5rem; color: var(--fg-muted); text-align: center;">Type at least 2 characters to search</p>';
-                    return;
-                }
-
-                const filtered = moviesData.filter(m => 
-                    m.title.toLowerCase().includes(query) || 
-                    m.director.toLowerCase().includes(query) ||
-                    m.category.toLowerCase().includes(query)
-                );
-
-                if (filtered.length === 0) {
-                    searchResults.innerHTML = '<p style="padding: 1.5rem; color: var(--fg-muted); text-align: center;">No results found</p>';
-                    return;
-                }
-
-                searchResults.innerHTML = filtered.map(movie => `
-                    <div class="search-result-item" tabindex="0" role="button">
+                if (query.length < 2) { searchResults.innerHTML = '<p style="padding: 1.5rem; color: var(--fg-muted); text-align: center;">Type at least 2 characters</p>'; return; }
+                const filtered = moviesData.filter(m => m.title.toLowerCase().includes(query) || m.director.toLowerCase().includes(query));
+                if (filtered.length === 0) { searchResults.innerHTML = '<p style="padding: 1.5rem; color: var(--fg-muted); text-align: center;">No results found</p>'; return; }
+                searchResults.innerHTML = filtered.map(m => `
+                    <div class="search-result-item" tabindex="0">
                         <div class="result-poster"></div>
                         <div class="result-info">
-                            <h4>${movie.title}</h4>
-                            <p>${movie.year} • ${movie.category} • ${movie.genres.join(', ')}</p>
-                            <div class="rating" style="margin-top: 0.5rem;">
-                                <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: var(--accent);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                <span style="color: var(--accent); font-weight: 600;">${movie.rating}/5</span>
-                            </div>
+                            <h4>${m.title}</h4>
+                            <p>${m.year} • ${m.category}</p>
                         </div>
-                    </div>
-                `).join('');
+                    </div>`).join('');
             });
-
-            // Initial placeholder
-            searchResults.innerHTML = '<p style="padding: 1.5rem; color: var(--fg-muted); text-align: center;">Type to search movies...</p>';
+            searchResults.innerHTML = '<p style="padding: 1.5rem; color: var(--fg-muted); text-align: center;">Type to search...</p>';
         }
 
-        // Mobile Menu
         function initMobileMenu() {
             const menuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenu = document.getElementById('mobileMenu');
-            const header = document.getElementById('mainHeader');
+            if (!menuBtn || !mobileMenu) return;
 
-            if (!menuBtn || !mobileMenu || !header) return;
-
-            menuBtn.addEventListener('click', function() {
+            menuBtn.addEventListener('click', () => {
                 const isOpen = mobileMenu.classList.toggle('active');
                 menuBtn.setAttribute('aria-expanded', isOpen);
-                
-                // Add background to header when menu is open so it's visible
-                if (isOpen) {
-                    header.classList.add('menu-open');
-                } else {
-                    header.classList.remove('menu-open');
-                }
             });
 
-            // Close menu when clicking a link
             mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', () => {
                     mobileMenu.classList.remove('active');
-                    header.classList.remove('menu-open');
                     menuBtn.setAttribute('aria-expanded', 'false');
                 });
             });
         }
 
         function initNewsletter() {
-    const form = document.getElementById('newsletterForm');
-    if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = form.querySelector('input[type="email"]').value;
+            const form = document.getElementById('newsletterForm');
+            if (!form) return;
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                btn.textContent = 'Subscribed!';
+                btn.style.background = '#22c55e';
+                setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; form.reset(); }, 2000);
+            });
+        }
         
-        const btn = form.querySelector('button');
-        
-        // 1. Check if the button is already disabled to prevent double clicks
-        if (btn.disabled) return; 
-
-        const originalText = btn.textContent;
-        btn.textContent = 'Subscribed!';
-        btn.style.background = '#22c55e';
-        
-        // 2. Disable the button
-        btn.disabled = true; 
-        
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            
-            // 3. Re-enable the button after 2 seconds
-            btn.disabled = false; 
-            
-            form.reset();
-        }, 2000);
-    });
-}
-
-        // Scroll Reveal Animation
         function initScrollReveal() {
             const reveals = document.querySelectorAll('.reveal');
-            
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
             reveals.forEach(el => observer.observe(el));
+        }
+
+        function initPopup() {
+            const popup = document.getElementById('domainPopup');
+            const closeBtn = document.getElementById('popupClose');
+            const closeLink = document.getElementById('popupCloseLink');
+            
+            // Check if user already closed it
+            if (localStorage.getItem('ssrmovies_popup_closed')) return;
+
+            // Show popup after 2 seconds
+            setTimeout(() => {
+                popup.classList.add('active');
+            }, 2000);
+
+            const closePopup = () => {
+                popup.classList.remove('active');
+                localStorage.setItem('ssrmovies_popup_closed', 'true');
+            };
+
+            closeBtn.addEventListener('click', closePopup);
+            closeLink.addEventListener('click', (e) => { e.preventDefault(); closePopup(); });
+            
+            // Close if clicked outside content
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) closePopup();
+            });
         }
     </script>
 </body>
