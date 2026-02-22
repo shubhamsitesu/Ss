@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>404 - Page Not Found | SSRMovies</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Return to SSRMovies for the latest Bollywood, Hollywood, and South Indian movie reviews.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://ssrmovies.in/404.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231a1a2e' width='100' height='100' rx='15'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='50' font-weight='bold' fill='%23d4af37'>S</text></svg>">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a26;
+            --fg-primary: #f5f5f7;
+            --fg-secondary: #a0a0b0;
+            --fg-muted: #6a6a7a;
+            --accent: #d4af37;
+            --accent-light: #e8c85a;
+            --accent-dark: #b8942d;
+            --border: #2a2a3a;
+            --glass: rgba(26, 26, 38, 0.9);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 40px rgba(212, 175, 55, 0.15);
+            --radius: 16px;
+            --radius-sm: 8px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--fg-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Film Grain Background */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bg-gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% 50%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 50% at 50% 50%, rgba(26, 26, 38, 1) 0%, var(--bg-primary) 100%);
+        }
+
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: floatOrb 25s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(212, 175, 55, 0.08);
+            top: -150px;
+            right: -150px;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(212, 175, 55, 0.05);
+            bottom: -100px;
+            left: -100px;
+            animation-delay: -12s;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(40px, -40px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
+        /* Film Strip Decoration */
+        .film-strip {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            z-index: 2;
+            opacity: 0.15;
+            display: none;
+        }
+
+        @media (min-width: 1200px) {
+            .film-strip {
+                display: block;
+            }
+        }
+
+        .film-strip-left {
+            animation: scrollStrip 30s linear infinite;
+        }
+
+        .film-strip-right {
+            position: fixed;
+            right: 20px;
+            left: auto;
+            animation: scrollStrip 30s linear infinite reverse;
+        }
+
+        @keyframes scrollStrip {
+            0% { transform: translateY(-50%) translateY(0); }
+            100% { transform: translateY(-50%) translateY(-50%); }
+        }
+
+        .sprocket-hole {
+            width: 14px;
+            height: 10px;
+            background: var(--bg-primary);
+            border-radius: 2px;
+            margin: 12px auto;
+        }
+
+        .film-frame {
+            width: 36px;
+            height: 50px;
+            background: var(--border);
+            border-radius: 3px;
+            margin: 8px auto;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--fg-primary);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--bg-primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        /* Main 404 Content */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 700px;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 404 Display */
+        .error-code {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .error-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(8rem, 25vw, 16rem);
+            font-weight: 900;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--border);
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.05em;
+        }
+
+        .error-number::before {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-stroke: 0;
+            opacity: 0.1;
+        }
+
+        /* Film Reel Animation */
+        .film-reel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .reel-icon {
+            width: 120px;
+            height: 120px;
+            animation: spinReel 20s linear infinite;
+        }
+
+        @keyframes spinReel {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .reel-icon svg {
+            width: 100%;
+            height: 100%;
+            color: var(--accent);
+            opacity: 0.8;
+        }
+
+        /* Error Message */
+        .error-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--fg-primary);
+        }
+
+        .error-title span {
+            color: var(--accent);
+        }
+
+        .error-message {
+            font-size: 1.15rem;
+            color: var(--fg-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--bg-primary);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--fg-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Popular Links Section */
+        .quick-links {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .quick-links h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--fg-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            color: var(--fg-primary);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .link-item:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .link-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .link-item span {
+            font-weight: 500;
+        }
+
+        /* Movie Quote */
+        .movie-quote {
+            margin-top: 3rem;
+            padding: 2rem;
+            border-left: 3px solid var(--accent);
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        .movie-quote blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--fg-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .movie-quote cite {
+            color: var(--accent);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-text {
+            color: var(--fg-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--fg-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 7rem 1rem 3rem;
+            }
+
+            .film-reel {
+                position: relative;
+                transform: none;
+                left: auto;
+                top: auto;
+                margin-bottom: 1rem;
+            }
+
+            .reel-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .error-number {
+                font-size: clamp(5rem, 20vw, 8rem);
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-links {
+                padding: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .movie-quote {
+                padding: 1.5rem;
+            }
+
+            .movie-quote blockquote {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Focus States */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Film Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation" aria-hidden="true">
+        <div class="bg-gradient"></div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+    </div>
+
+    <!-- Film Strip Decorations -->
+    <div class="film-strip film-strip-left" aria-hidden="true">
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+    </div>
+    <div class="film-strip film-strip-right" aria-hidden="true">
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+        <div class="film-frame"></div>
+        <div class="sprocket-hole"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo" aria-label="SSRMovies Home">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">SSR<span>Movies</span></span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="error-container">
+            <!-- 404 Display with Film Reel -->
+            <div class="error-code">
+                <div class="film-reel">
+                    <div class="reel-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <circle cx="12" cy="5" r="1.5" fill="currentColor"></circle>
+                            <circle cx="17" cy="8" r="1.5" fill="currentColor"></circle>
+                            <circle cx="17" cy="16" r="1.5" fill="currentColor"></circle>
+                            <circle cx="12" cy="19" r="1.5" fill="currentColor"></circle>
+                            <circle cx="7" cy="16" r="1.5" fill="currentColor"></circle>
+                            <circle cx="7" cy="8" r="1.5" fill="currentColor"></circle>
+                        </svg>
+                    </div>
+                </div>
+                <div class="error-number">404</div>
+            </div>
+
+            <!-- Error Message -->
+            <h1 class="error-title">Scene <span>Not Found</span></h1>
+            <p class="error-message">
+                Looks like this scene got cut from the final edit. The page you're looking for has been moved, deleted, or perhaps never existed in this timeline.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="error-actions">
+                <a href="/" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Go Home
+                </a>
+                <a href="/#reviews" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    Browse Reviews
+                </a>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h3>Popular Sections</h3>
+                <div class="links-grid">
+                    <a href="/#categories" class="link-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m22 8-6 4 6 4V8Z"></path>
+                            <rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect>
+                        </svg>
+                        <span>Bollywood Reviews</span>
+                    </a>
+                    <a href="/#categories" class="link-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                        <span>Tollywood Reviews</span>
+                    </a>
+                    <a href="/#categories" class="link-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                            <path d="M8.5 8.5v.01"></path>
+                            <path d="M16 15.5v.01"></path>
+                            <path d="M12 12v.01"></path>
+                        </svg>
+                        <span>Hollywood Reviews</span>
+                    </a>
+                    <a href="/#categories" class="link-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m10 9 5 3-5 3z"></path>
+                        </svg>
+                        <span>Web Series</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Movie Quote -->
+            <div class="movie-quote">
+                <blockquote>"Picture abhi baaki hai mere dost."</blockquote>
+                <cite>- Om Shanti Om (2007)</cite>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2026 SSRMovies.in - All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/#about">About</a>
+                <a href="/#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
