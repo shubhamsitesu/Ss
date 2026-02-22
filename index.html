@@ -336,7 +336,6 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            /* Adjust padding to account for Header + Sale Banner */
             padding: calc(var(--header-height) + var(--sale-banner-height) + 2rem) 2rem 4rem; 
             position: relative;
             z-index: 2;
@@ -780,7 +779,7 @@
         .about-quote p { font-style: italic; color: var(--fg-primary); font-size: 1rem !important; margin-bottom: 1rem !important; }
         .about-quote cite { color: var(--accent); font-style: normal; font-weight: 600; font-size: 0.9rem; }
 
-        /* Disclaimer Section - NEW */
+        /* Disclaimer Section */
         .disclaimer-section {
             padding: 4rem 2rem;
             background: var(--bg-primary);
@@ -981,7 +980,6 @@
         .mobile-menu nav a { font-size: 1.5rem; }
 
         /* Contact Panel (Popup replacement) */
-        /* Renamed classes to avoid ad-blockers targeting words like 'popup' */
         .contact-panel {
             position: fixed;
             bottom: 2rem;
@@ -1402,7 +1400,7 @@
             </div>
         </section>
 
-        <!-- Disclaimer Section (New) -->
+        <!-- Disclaimer Section -->
         <section class="disclaimer-section" id="disclaimer">
             <div class="disclaimer-box reveal">
                 <h2>
@@ -1679,20 +1677,17 @@
             const panel = document.getElementById('contactPanel');
             const dismissBtn = document.getElementById('panelDismiss');
             
-            // Check if user already closed it
-            if (localStorage.getItem('ssrmovies_panel_closed')) return;
+            // REMOVED localStorage check - now shows every time
 
             // Show panel after 2 seconds
             setTimeout(() => {
                 panel.classList.add('visible');
             }, 2000);
 
-            const closePanel = () => {
+            // Close button logic
+            dismissBtn.addEventListener('click', () => {
                 panel.classList.remove('visible');
-                localStorage.setItem('ssrmovies_panel_closed', 'true');
-            };
-
-            dismissBtn.addEventListener('click', closePanel);
+            });
         }
     </script>
 </body>
