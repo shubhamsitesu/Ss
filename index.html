@@ -41,7 +41,7 @@
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght+400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json">
@@ -77,6 +77,7 @@
             --radius-sm: 8px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --header-height: 80px;
+            --sale-banner-height: 40px;
         }
 
         * {
@@ -88,8 +89,7 @@
         html {
             scroll-behavior: smooth;
             overflow-x: hidden;
-            /* Stops anchor links from hiding behind header */
-            scroll-padding-top: 120px; 
+            scroll-padding-top: 140px; 
         }
 
         body {
@@ -190,7 +190,6 @@
             padding: 1rem 0;
             display: flex;
             align-items: center;
-            /* Permanent Glass Background */
             background: var(--glass);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -308,12 +307,37 @@
             transition: var(--transition);
         }
 
+        /* Sale Banner */
+        .sale-banner {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            right: 0;
+            height: var(--sale-banner-height);
+            background: linear-gradient(90deg, #1a1a26, #12121a);
+            border-bottom: 1px solid var(--accent);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--fg-primary);
+            padding: 0 1rem;
+        }
+        
+        .sale-banner strong {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 10rem 2rem 4rem; /* Extra top padding */
+            /* Adjust padding to account for Header + Sale Banner */
+            padding: calc(var(--header-height) + var(--sale-banner-height) + 2rem) 2rem 4rem; 
             position: relative;
             z-index: 2;
         }
@@ -756,6 +780,40 @@
         .about-quote p { font-style: italic; color: var(--fg-primary); font-size: 1rem !important; margin-bottom: 1rem !important; }
         .about-quote cite { color: var(--accent); font-style: normal; font-weight: 600; font-size: 0.9rem; }
 
+        /* Disclaimer Section - NEW */
+        .disclaimer-section {
+            padding: 4rem 2rem;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 2;
+        }
+        .disclaimer-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+        }
+        .disclaimer-box h2 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .disclaimer-box p {
+            color: var(--fg-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
         /* Newsletter Section */
         .newsletter { padding: 6rem 2rem; position: relative; z-index: 2; }
         .newsletter-container {
@@ -922,99 +980,77 @@
         .mobile-menu nav { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
         .mobile-menu nav a { font-size: 1.5rem; }
 
-        /* Domain Sale Popup */
-        .popup-overlay {
+        /* Contact Panel (Popup replacement) */
+        /* Renamed classes to avoid ad-blockers targeting words like 'popup' */
+        .contact-panel {
             position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease;
-        }
-        .popup-overlay.active { opacity: 1; visibility: visible; }
-        
-        .popup-content {
-            background: linear-gradient(145deg, #1a1a26 0%, #12121a 100%);
+            bottom: 2rem;
+            right: 2rem;
+            width: 340px;
+            background: var(--bg-card);
             border: 1px solid var(--accent);
-            border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 450px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
-            transform: scale(0.9);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 1500;
+            transform: translateY(120%);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
         }
-        .popup-overlay.active .popup-content { transform: scale(1); }
+        
+        .contact-panel.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
-        .popup-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--fg-secondary);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+        .panel-header {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        .panel-header h3 {
+            color: var(--bg-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .panel-dismiss {
+            background: rgba(0,0,0,0.2);
+            border: none;
+            color: var(--bg-primary);
             cursor: pointer;
             font-size: 1.2rem;
             line-height: 1;
-            transition: var(--transition);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
         }
-        .popup-close:hover { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
+        .panel-dismiss:hover { background: rgba(0,0,0,0.4); }
 
-        .popup-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: var(--accent);
+        .panel-body {
+            padding: 1.5rem;
+            text-align: center;
         }
-        .popup-icon svg { width: 32px; height: 32px; }
-        
-        .popup-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            margin-bottom: 0.75rem;
-            color: var(--accent);
-        }
-        .popup-text {
+        .panel-body p {
             color: var(--fg-secondary);
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
-        .popup-btn {
+        .panel-cta {
             display: block;
             width: 100%;
-            padding: 1rem;
+            padding: 0.75rem;
             background: var(--accent);
             color: var(--bg-primary);
             text-decoration: none;
             font-weight: 700;
-            border-radius: 10px;
-            transition: var(--transition);
-            margin-bottom: 1rem;
+            border-radius: 8px;
+            transition: opacity 0.2s;
         }
-        .popup-btn:hover { opacity: 0.9; transform: translateY(-2px); }
-        .popup-secondary {
-            display: block;
-            color: var(--fg-muted);
-            font-size: 0.85rem;
-            text-decoration: none;
-        }
-        .popup-secondary:hover { color: var(--fg-primary); }
+        .panel-cta:hover { opacity: 0.9; }
 
         /* Animations */
         .reveal {
@@ -1027,7 +1063,6 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-content { grid-template-columns: 1fr; text-align: center; }
-            /* Fix: Text First on Mobile */
             .hero-text { order: 1; margin-bottom: 2rem; } 
             .hero-visual { order: 2; max-width: 500px; margin: 0 auto; }
             
@@ -1041,10 +1076,11 @@
         }
 
         @media (max-width: 768px) {
-            /* Mobile Header Overlap Fix */
-            .hero { padding-top: 8rem; } /* Added extra space */
-            header { background: rgba(18, 18, 26, 1); } /* Solid background on mobile */
-
+            .hero { padding-top: 9rem; }
+            header { background: rgba(18, 18, 26, 1); }
+            
+            .sale-banner { font-size: 0.75rem; height: 35px; }
+            
             .header-inner nav { display: none; }
             .mobile-menu-btn { display: flex; }
             .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; }
@@ -1058,9 +1094,13 @@
             .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
             .footer-links { flex-wrap: wrap; justify-content: center; }
             
-            /* Popup Mobile Adjustments */
-            .popup-content { padding: 2rem 1.5rem; }
-            .popup-title { font-size: 1.5rem; }
+            /* Mobile adjustments for contact panel */
+            .contact-panel {
+                left: 1rem;
+                right: 1rem;
+                width: auto;
+                bottom: 1rem;
+            }
         }
         
         /* Focus States */
@@ -1105,6 +1145,11 @@
         </div>
     </header>
 
+    <!-- Sticky Sale Banner -->
+    <div class="sale-banner">
+        <strong>Domain For Sale:</strong> SSRMovies.in - Contact sale@ssrmovies.in for inquiries.
+    </div>
+
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -1116,7 +1161,6 @@
                         </svg>
                         Trusted by 2M+ Indian Cinema Lovers
                     </div>
-                    <!-- SEO H1 -->
                     <h1>Welcome to <span class="highlight">SSRMovies</span> - Your Trusted Review Destination</h1>
                     <p class="hero-description">
                         SSRMovies (ssrmovies.in) is India's leading platform for unbiased movie reviews. Explore Bollywood, Hollywood, and South Indian cinema analysis at SSRMovies. We help you decide what to watch next.
@@ -1266,7 +1310,8 @@
             <div class="section-container">
                 <header class="reviews-header reveal">
                     <h2>Movie on SSRMovies</h2>
-                    
+                    <a href="#" class="view-all">
+                        View All Reviews
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"></path>
                             <path d="m12 5 7 7-7 7"></path>
@@ -1354,6 +1399,21 @@
                         <cite>- Rahul Sharma, Mumbai</cite>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer Section (New) -->
+        <section class="disclaimer-section" id="disclaimer">
+            <div class="disclaimer-box reveal">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    Disclaimer
+                </h2>
+                <p>
+                    SSRMovies.in is strictly an educational and informational platform. We <strong>do not host, provide, or link to any pirated content, movie downloads, or illegal streaming sites</strong>. Our sole purpose is to provide honest movie reviews and analysis. We respect copyright laws and encourage our users to watch movies through legal channels only.
+                </p>
             </div>
         </section>
 
@@ -1475,25 +1535,19 @@
         </nav>
     </div>
 
-    <!-- Domain Sale Popup -->
-    <div class="popup-overlay" id="domainPopup">
-        <div class="popup-content">
-            <button class="popup-close" id="popupClose">&times;</button>
-            <div class="popup-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                    <path d="M12 17h.01"></path>
-                </svg>
-            </div>
-            <h3 class="popup-title">Premium Domain For Sale</h3>
-            <p class="popup-text">
-                Own this high-authority domain. <strong>SSRMovies.in</strong> is perfect for movie portals, streaming platforms, or review blogs.
+    <!-- Contact Panel (Renamed from Popup) -->
+    <div class="contact-panel" id="contactPanel">
+        <div class="panel-header">
+            <h3>Domain For Sale</h3>
+            <button class="panel-dismiss" id="panelDismiss">&times;</button>
+        </div>
+        <div class="panel-body">
+            <p>
+                <strong>SSRMovies.in</strong> is a premium domain available for purchase. Ideal for movie portals and review platforms.
             </p>
-            <a href="mailto:sale@ssrmovies.in?subject=Inquiry for SSRMovies.in Domain" class="popup-btn">
-                Contact Owner: sale@ssrmovies.in
+            <a href="mailto:sale@ssrmovies.in?subject=Inquiry for SSRMovies.in Domain" class="panel-cta">
+                Contact: sale@ssrmovies.in
             </a>
-            <a href="#" class="popup-secondary" id="popupCloseLink">No thanks, continue to site</a>
         </div>
     </div>
 
@@ -1513,7 +1567,7 @@
             initMobileMenu();
             initNewsletter();
             initScrollReveal();
-            initPopup(); // Initialize Popup
+            initContactPanel();
         });
 
         function initReviews() {
@@ -1621,31 +1675,24 @@
             reveals.forEach(el => observer.observe(el));
         }
 
-        function initPopup() {
-            const popup = document.getElementById('domainPopup');
-            const closeBtn = document.getElementById('popupClose');
-            const closeLink = document.getElementById('popupCloseLink');
+        function initContactPanel() {
+            const panel = document.getElementById('contactPanel');
+            const dismissBtn = document.getElementById('panelDismiss');
             
             // Check if user already closed it
-            if (localStorage.getItem('ssrmovies_popup_closed')) return;
+            if (localStorage.getItem('ssrmovies_panel_closed')) return;
 
-            // Show popup after 2 seconds
+            // Show panel after 2 seconds
             setTimeout(() => {
-                popup.classList.add('active');
+                panel.classList.add('visible');
             }, 2000);
 
-            const closePopup = () => {
-                popup.classList.remove('active');
-                localStorage.setItem('ssrmovies_popup_closed', 'true');
+            const closePanel = () => {
+                panel.classList.remove('visible');
+                localStorage.setItem('ssrmovies_panel_closed', 'true');
             };
 
-            closeBtn.addEventListener('click', closePopup);
-            closeLink.addEventListener('click', (e) => { e.preventDefault(); closePopup(); });
-            
-            // Close if clicked outside content
-            popup.addEventListener('click', (e) => {
-                if (e.target === popup) closePopup();
-            });
+            dismissBtn.addEventListener('click', closePanel);
         }
     </script>
 </body>
