@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ssrmovies.in/sitemap.xml
+Sitemap: https://filmyfly.in/sitemap.xml
