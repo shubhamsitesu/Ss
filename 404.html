@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- SEO Meta Tags -->
-    <title>404 - Page Not Found | SSRMovies</title>
-    <meta name="description" content="The page you're looking for doesn't exist. Return to SSRMovies for the latest Bollywood, Hollywood, and South Indian movie reviews.">
+    <title>404 - Page Not Found | FilmyFly</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Return to FilmyFly.in for the latest Bollywood, Hollywood, and South Indian movie reviews.">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="canonical" href="https://ssrmovies.in/404.html">
+    <link rel="canonical" href="https://filmyfly.in/404.html">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231a1a2e' width='100' height='100' rx='15'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='50' font-weight='bold' fill='%23d4af37'>S</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230c0c14' width='100' height='100' rx='20'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='52' font-weight='bold' fill='%23e63946'>F</text></svg>">
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,21 +21,21 @@
     
     <style>
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a26;
-            --fg-primary: #f5f5f7;
-            --fg-secondary: #a0a0b0;
-            --fg-muted: #6a6a7a;
-            --accent: #d4af37;
-            --accent-light: #e8c85a;
-            --accent-dark: #b8942d;
+            --bg-deep: #0c0c14;
+            --bg-panel: #14141f;
+            --bg-card: #1c1c2a;
+            --fg-primary: #f0e6d2;
+            --fg-secondary: #b0a8a0;
+            --fg-muted: #6b6870;
+            --accent: #e63946;
+            --accent-glow: #ff4d5a;
+            --gold: #d4af37;
             --border: #2a2a3a;
-            --glass: rgba(26, 26, 38, 0.9);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            --shadow-glow: 0 0 40px rgba(212, 175, 55, 0.15);
-            --radius: 16px;
-            --radius-sm: 8px;
+            --glass: rgba(20, 20, 31, 0.95);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 30px rgba(230, 57, 70, 0.3);
+            --radius: 18px;
+            --radius-sm: 10px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -52,7 +52,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
+            background: var(--bg-deep);
             color: var(--fg-primary);
             line-height: 1.6;
             overflow-x: hidden;
@@ -78,7 +78,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 1;
-            opacity: 0.03;
+            opacity: 0.02;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
@@ -99,9 +99,9 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(ellipse 80% 50% at 50% 50%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 40% at 80% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse 50% 50% at 50% 50%, rgba(26, 26, 38, 1) 0%, var(--bg-primary) 100%);
+                radial-gradient(ellipse 80% 50% at 50% 50%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 20%, rgba(230, 57, 70, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 50% at 50% 50%, var(--bg-card) 0%, var(--bg-deep) 100%);
         }
 
         .floating-orb {
@@ -115,7 +115,7 @@
         .orb-1 {
             width: 500px;
             height: 500px;
-            background: rgba(212, 175, 55, 0.08);
+            background: rgba(230, 57, 70, 0.1);
             top: -150px;
             right: -150px;
         }
@@ -123,7 +123,7 @@
         .orb-2 {
             width: 400px;
             height: 400px;
-            background: rgba(212, 175, 55, 0.05);
+            background: rgba(230, 57, 70, 0.06);
             bottom: -100px;
             left: -100px;
             animation-delay: -12s;
@@ -172,7 +172,7 @@
         .sprocket-hole {
             width: 14px;
             height: 10px;
-            background: var(--bg-primary);
+            background: var(--bg-deep);
             border-radius: 2px;
             margin: 12px auto;
         }
@@ -218,23 +218,23 @@
         .logo-icon {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #b91c1c);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            color: var(--bg-primary);
+            color: #fff;
             box-shadow: var(--shadow-glow);
         }
 
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.5px;
         }
 
         .logo-text span {
@@ -294,11 +294,11 @@
             left: 0;
             right: 0;
             z-index: -1;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #b91c1c 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-stroke: 0;
-            opacity: 0.1;
+            opacity: 0.15;
         }
 
         /* Film Reel Animation */
@@ -365,7 +365,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem 2rem;
-            border-radius: var(--radius-sm);
+            border-radius: 50px;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
@@ -375,14 +375,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            color: var(--bg-primary);
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, var(--accent) 0%, #b91c1c 100%);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 35px rgba(230, 57, 70, 0.6);
         }
 
         .btn-secondary {
@@ -429,7 +429,7 @@
             align-items: center;
             gap: 0.75rem;
             padding: 1rem;
-            background: var(--bg-secondary);
+            background: var(--bg-panel);
             border-radius: var(--radius-sm);
             text-decoration: none;
             color: var(--fg-primary);
@@ -483,7 +483,7 @@
 
         /* Footer */
         footer {
-            background: var(--bg-secondary);
+            background: var(--bg-panel);
             padding: 2rem;
             border-top: 1px solid var(--border);
             position: relative;
@@ -627,9 +627,9 @@
     <!-- Header -->
     <header>
         <div class="header-inner">
-            <a href="/" class="logo" aria-label="SSRMovies Home">
-                <div class="logo-icon">S</div>
-                <span class="logo-text">SSR<span>Movies</span></span>
+            <a href="/" class="logo" aria-label="FilmyFly Home">
+                <div class="logo-icon">F</div>
+                <span class="logo-text">Filmy<span>Fly</span>.in</span>
             </a>
         </div>
     </header>
@@ -727,7 +727,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p class="footer-text">&copy; 2026 SSRMovies.in - All Rights Reserved</p>
+            <p class="footer-text">&copy; 2026 FilmyFly.in – All Rights Reserved</p>
             <div class="footer-links">
                 <a href="/">Home</a>
                 <a href="/#about">About</a>
